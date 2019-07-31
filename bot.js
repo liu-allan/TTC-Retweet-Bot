@@ -14,7 +14,7 @@ var Twitter = new twit(
 
 var retweet = function () {
     var parameters = {
-        q: 'from:@TTCnotices, Line, 1 OR 2, delays OR service OR closure',
+        q: 'from:@TTCnotices, Line, 1 OR 2, delays OR service OR closure, -elevator',
         result_type: 'recent',
         lang: 'en'
     }
