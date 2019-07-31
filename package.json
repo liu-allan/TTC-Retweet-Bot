@@ -4,11 +4,12 @@
   "description": "Retweet bot for Line 1 and Line 2 TTC",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "bot.js"
   },
   "author": "Allan Liu",
   "license": "ISC",
   "dependencies": {
     "twit": "^2.2.11"
-  }
+  },
+  "devDependencies": {}
 }
