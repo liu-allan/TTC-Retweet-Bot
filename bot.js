@@ -12,4 +12,32 @@ var Twitter = new twit(
     }
 )
 
+var retweet = function () {
+    var parameters = {
+        q: 'from:@TTCnotices, Line, 1 OR 2, Delays OR delays, service OR closure, -elevator',
+        result_type: 'recent',
+        lang: 'en'
+    }
+    Twitter.get('search/tweets', parameters, function (err, data){
+        if (!err){
+            var retweetId = data.statuses[0].id_str;
+            Twitter.post('statuses/retweet/:id', {
+                id: retweetId
+            }, function (err, response){
+                if (response){
+                    console.log('Retweeted!');
+                }
+                if (err) {
+                    console.log(err);
+                    console.log('Problem Retweeting');
+                }
+            });
+        }
+        else{
+            console.log('Error during tweet search call');
+        }
+    });
+};
+
+retweet();
 
